@@ -9,8 +9,8 @@ app = Flask(__name__)
 def hello():
     now = datetime.now()
     date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
-    vmessage = "Hello World! Today is: "+date_time 
-
+   # vmessage = "Hello World! Today is: "+date_time 
+    vmessage = "OK"
     root = Tk()
     var = IntVar()
     R1 = Radiobutton(root, text = "HOG Application Summary", variable=var, value=1, command=sel)

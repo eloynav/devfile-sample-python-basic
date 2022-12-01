@@ -14,6 +14,7 @@ metadata:
     - Python
     - Pip
     - Flask
+    - tkinter
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
   attributes:
     alpha.dockerimage-port: 8081

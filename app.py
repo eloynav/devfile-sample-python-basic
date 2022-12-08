@@ -6,12 +6,14 @@ import mysql.connector
 app = Flask(__name__)
 
 @app.route('/')
+def myrecord(x):
+    return(x)
+
 def hello():
     now = datetime.now()
     date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
     
     vmessage = "Opening Database now: "+date_time 
-    print ("vmessage)
     mydb = mysql.connector.connect(host="localhost",user="root",password="Olor202@",database="em_schema")
 
     cursor = mydb.cursor()
@@ -19,11 +21,9 @@ def hello():
     results = cursor.fetchall()
 
     for row in results:
-	print(row)
-        print("\n")
+	myrecord(row)
 		    
     vmessage = "Closing Database now: "+date_time 
-    print ("vmessage)
     return vmessage
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 from flask import Flask
 from datetime import datetime
 import os
+import mysql.connector
 
 app = Flask(__name__)
 
@@ -8,9 +9,21 @@ app = Flask(__name__)
 def hello():
     now = datetime.now()
     date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
-    vmessage = "Hello World! Today is: "+date_time 
+    
+    vmessage = "Opening Database now: "+date_time 
+    print ("vmessage)
+    mydb = mysql.connector.connect(host="localhost",user="root",password="Olor202@",database="em_schema")
 
+    cursor = mydb.cursor()
+    cursor.execute("SELECT * FROM ptb_reports")
+    results = cursor.fetchall()
 
+    for row in results:
+	print(row)
+        print("\n")
+		    
+    vmessage = "Closing Database now: "+date_time 
+    print ("vmessage)
     return vmessage
 
 if __name__ == '__main__':

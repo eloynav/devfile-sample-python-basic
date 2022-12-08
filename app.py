@@ -1,6 +1,5 @@
 from flask import Flask
 from datetime import datetime
-from tkinter import *
 import os
 
 app = Flask(__name__)
@@ -9,17 +8,8 @@ app = Flask(__name__)
 def hello():
     now = datetime.now()
     date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
-   # vmessage = "Hello World! Today is: "+date_time 
-    vmessage = "OK"
-    root = Tk()
-    var = IntVar()
-    R1 = Radiobutton(root, text = "HOG Application Summary", variable=var, value=1, command=sel)
-    R1.pack(anchor = W)
-    R2 = Radiobutton(root, text = "HOG Provincial Summary",  variable=var, value=2, command=sel)
-    R2.pack(anchor = W)
-    label = Label(root)
-    label.pack()
-    root.mainloop()
+    vmessage = "Hello World! Today is: "+date_time 
+
 
     return vmessage
 

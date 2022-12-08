@@ -21,9 +21,8 @@ def hello():
     results = cursor.fetchall()
 
     for row in results:
-	myrecord(row)
+        vmessage = row[1]
 		    
-    vmessage = "Closing Database now: "+date_time 
     return vmessage
 
 if __name__ == '__main__':
